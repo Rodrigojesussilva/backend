@@ -27,7 +27,7 @@ const upload = multer({ storage: storage });
 // Middleware para permitir acesso a partir de qualquer origem (CORS)
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); // Permite acesso de qualquer origem
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); // Permite esses cabeçalhos na requisição
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization"); // Permite esses cabeçalhos na requisição, incluindo Authorization
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS"); // Permite esses métodos HTTP
   if (req.method === 'OPTIONS') { // Verifica se o método é OPTIONS
     return res.sendStatus(200); // Responde com status 200 OK para requisições OPTIONS
